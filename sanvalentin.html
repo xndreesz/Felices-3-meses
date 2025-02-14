@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín 💝</title>
+    <link rel="icon" type="image/png" href="cina.png">
+    
+    <style>
+        @font-face {
+            font-family: 'Pinky Show';
+            src: url('PinkyShow.ttf') format('truetype'),
+                 url('PinkyShow.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/11697.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            font-family: 'Pinky Show', cursive;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ADD8E6; /* Azul claro pastel */
+            text-shadow: 0 0 15px #ADD8E6, 0 0 25px #87CEFA;
+            animation: breathing 2s infinite alternate;
+        }
+
+        @keyframes breathing {
+            0% { text-shadow: 0 0 15px #ADD8E6, 0 0 25px #87CEFA; transform: scale(1); }
+            100% { text-shadow: 0 0 30px #ADD8E6, 0 0 40px #87CEFA; transform: scale(1.05); }
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            width: 100%;
+            position: relative;
+        }
+
+        .button {
+            font-size: 1.5em;
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid #ADD8E6;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Pinky Show', cursive;
+            color: #ADD8E6;
+            text-shadow: 0 0 5px #ADD8E6;
+            transition: 0.3s;
+            animation: breathing 2s infinite alternate;
+        }
+
+        .button:hover {
+            background: rgba(173, 216, 230, 0.3);
+            color: white;
+        }
+
+        #si {
+            position: relative;
+        }
+
+        #no {
+            position: relative;
+        }
+
+        /* Estilos para los corazones */
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #FF69B4;
+            opacity: 0;
+            animation: floatHeart 3s infinite ease-in-out;
+        }
+
+        @keyframes floatHeart {
+            0% { opacity: 0; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-50px) scale(1.2); }
+            100% { opacity: 0; transform: translateY(-100px) scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Pasarías el 14 conmigo?</h1>
+
+    <div class="buttons">
+        <button class="button" id="si" onclick="window.location.href='14Feb.html'">Sí</button>
+        <button class="button" id="no" onmouseover="moveButton()" onclick="redirectNo()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            let maxX = window.innerWidth * 0.2; 
+            let maxY = window.innerHeight * 0.2; 
+
+            let x = Math.random() * maxX - maxX / 2;
+            let y = Math.random() * maxY - maxY / 2;
+
+            document.getElementById('no').style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function redirectNo() {
+            window.location.href = "https://i.pinimg.com/736x/86/fa/cc/86facc99efdb03aa3ea2c2abe03721aa.jpg";
+        }
+
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "💖";
+            heart.classList.add("heart");
+
+            let x = Math.random() * window.innerWidth * 0.8 + window.innerWidth * 0.1;
+            let y = Math.random() * window.innerHeight * 0.8 + window.innerHeight * 0.1;
+
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi San Valentín 💝</title>
+    <link rel="icon" type="image/png" href="cina.png">
+    
+    <style>
+        @font-face {
+            font-family: 'Pinky Show';
+            src: url('PinkyShow.ttf') format('truetype'),
+                 url('PinkyShow.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/11697.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            font-family: 'Pinky Show', cursive;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ADD8E6;
+            text-shadow: 0 0 15px #ADD8E6, 0 0 25px #87CEFA;
+            animation: breathing 2s infinite alternate;
+        }
+
+        @keyframes breathing {
+            0% {
+                text-shadow: 0 0 15px #ADD8E6, 0 0 25px #87CEFA;
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 0 0 30px #ADD8E6, 0 0 40px #87CEFA;
+                transform: scale(1.05);
+            }
+        }
+
+        .neon-button {
+            font-size: 1.5em;
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid #ADD8E6;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Pinky Show', cursive;
+            color: #ADD8E6;
+            text-shadow: 0 0 5px #ADD8E6;
+            animation: neonGlow 1.5s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 5px #ADD8E6, 0 0 10px #87CEFA; }
+            100% { text-shadow: 0 0 10px #87CEFA, 0 0 15px #ADD8E6; }
+        }
+
+        .neon-button:hover {
+            background: rgba(173, 216, 230, 0.3);
+            color: white;
+        }
+
+        #message {
+            display: none;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 80%;
+            max-width: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
+        }
+
+        .image-container {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            transform: translateX(-50%);
+            animation: fadeInOutSmooth 8s infinite;
+        }
+
+        .image-container img {
+            width: 200px;
+            border-radius: 10px;
+            border: 2px solid #ADD8E6;
+            box-shadow: 0 0 15px #ADD8E6;
+        }
+
+        .image-container p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #ADD8E6;
+            text-shadow: 0 0 5px #ADD8E6;
+        }
+
+        /* Animación de aparición y desaparición */
+        @keyframes fadeInOutSmooth {
+            0% { opacity: 0; transform: translateY(30px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-30px); }
+        }
+
+        /* Corazones flotando */
+        .heart {
+            position: absolute;
+            font-size: 1.5em;
+            color: pink;
+            opacity: 0;
+            animation: floatHeart 5s infinite ease-in-out;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(0.5);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-20px, -50px) scale(1);
+            }
+            40% {
+                transform: translate(20px, -100px) scale(1.2);
+            }
+            60% {
+                transform: translate(-20px, -150px) scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(20px, -200px) scale(0.8);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0, -250px) scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi San Valentín 💝</h1>
+
+    <button class="neon-button" onclick="document.getElementById('message').style.display='block'">Click aquí</button>
+
+    <div id="message">
+        Hola mi amor, sé que no es lo que esperabas, ni un cuarto de lo que mereces; sin embargo, quiero que sepas que me encanta saber que estamos pasando juntos nuestro primer 14. Gracias por llegar a mi vida y por inspirarme a ser mejor persona, gracias por enseñarme que vale la pena luchar por algo, nunca me arrepentiré de haberte empezado a coquetear, nunca me cansaré de decirte que eres la persona por la cual lucharé hasta que te aburras de mí. Gracias por todos los momentos lindos que hemos pasado juntos, gracias por dejarme pasar tiempo de tu vida contigo, te juro que desde que estamos juntos solo tengo el pensamiento de "quiero estar toda la vida con esa niña". Eres definitivamente mi futura esposa, quiero formar una vida y una familia contigo porque te amo y eso no cambiará por nada en el mundo. Espero poder seguir sumando días, meses y años junto a ti. Feliz 14, cariño. 💝
+    </div>
+
+    <div class="image-container">
+        <img src="corazon.png" alt="Imagen especial">
+        <p>Siempre serás mi camino</p>
+    </div>
+
+    <script>
+        function createHearts() {
+            for (let i = 0; i < 8; i++) { // Se redujo la cantidad de corazones generados
+                let heart = document.createElement("div");
+                heart.innerHTML = "💝";
+                heart.classList.add("heart");
+    
+                let randomX = Math.random() * window.innerWidth;
+                let randomY = Math.random() * window.innerHeight;
+                let randomDuration = 3 + Math.random() * 3;
+    
+                heart.style.left = `${randomX}px`;
+                heart.style.top = `${randomY}px`;
+                heart.style.animationDuration = `${randomDuration}s`;
+    
+                document.body.appendChild(heart);
+    
+                setTimeout(() => {
+                    heart.remove();
+                }, randomDuration * 1000);
+            }
+        }
+    
+        setInterval(createHearts, 1500); // Se aumentó ligeramente el intervalo para menor frecuencia
+    </script>
+    
+
+</body>
+</html>
